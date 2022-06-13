@@ -2,26 +2,26 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>DreamWorld</members>
-	<members>HelloWorld</members>
-	<members>StudentQuery</members>
+		<members>HelloWorld</members>
+		<members>StudentQuery</members>
         <members>Teacher</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>Dream_World__c.Tesla__c</members>
-	<members>Hello_World__c.Hello__c</members>
+		<members>Hello_World__c.Hello__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Dream_World__c</members>
-	<members>Hello_World__c</members>
-	<members>Student__c</members>
+		<members>Hello_World__c</members>
+		<members>Student__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Dream_World__c</members>
-	<members>Hello_World__c</members>
-	<members>Student__c</members>
+		<members>Hello_World__c</members>
+		<members>Student__c</members>
         <name>CustomTab</name>
     </types>
 	<types>
