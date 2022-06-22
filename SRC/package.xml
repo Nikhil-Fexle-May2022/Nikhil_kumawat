@@ -5,7 +5,15 @@
 	<members>HelloWorld</members>
 	<members>StudentQuery</members>
         <members>Teacher</members>
+	<members>DownTrianglePattern</members>
+        <members>HelloWorldTestClass</members>
+        <members>LeftTrianglePascalPattern</members>
+        <members>MyHelloWorld</members>
         <name>ApexClass</name>
+    </types>
+	<types>
+        <members>HelloWorldTrigger</members>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>Dream_World__c.Tesla__c</members>
@@ -26,6 +34,7 @@
 	<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
+	<members>Book__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -39,6 +48,7 @@
 	<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
+	<members>Book__c</members>
         <name>CustomTab</name>
     </types>
 	<types>
