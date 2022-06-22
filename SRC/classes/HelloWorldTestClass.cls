@@ -1,6 +1,6 @@
 @isTest 
 private class HelloWorldClassTest {
-    static testMethod void validateHelloWorld() {
+    static testMethod void HelloWorldTest() {
        Book__c b = new Book__c(Name='Behind the Cloud', Price__c=100);
        System.debug('Price before inserting new book: ' + b.Price__c);
 
