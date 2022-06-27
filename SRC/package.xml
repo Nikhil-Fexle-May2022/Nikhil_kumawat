@@ -11,6 +11,7 @@
         <members>MyHelloWorld</members>
         <members>PracticeDataTypesAndMethods</members>
         <members>StudentRecord</members>
+        <members>TestClassNikhil</members>
         <name>ApexClass</name>
     </types>
 	<types>
