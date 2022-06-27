@@ -9,6 +9,8 @@
         <members>HelloWorldTestClass</members>
         <members>LeftTrianglePascalPattern</members>
         <members>MyHelloWorld</members>
+        <members>PracticeDataTypesAndMethods</members>
+        <members>StudentRecord</members>
         <members>TestClassNikhil</members>
         <name>ApexClass</name>
     </types>
@@ -31,25 +33,25 @@
         <members>Lead</members>
         <members>Pan_Card__c</members>
         <members>StudentSubject__c</members>
-	<members>Student__c</members>
-	<members>Subject__c</members>
+		<members>Student__c</members>
+		<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
-	<members>Book__c</members>
+		<members>Book__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Dream_World__c</members>
-	<members>Hello_World__c</members>
-	<members>College__c</members>
+		<members>Hello_World__c</members>
+		<members>College__c</members>
         <members>Employee__c</members>
         <members>Pan_Card__c</members>
         <members>StudentSubject__c</members>
-	<members>Student__c</members>
-	<members>Subject__c</members>
+		<members>Student__c</members>
+		<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
-	<members>Book__c</members>
+		<members>Book__c</members>
         <name>CustomTab</name>
     </types>
 	<types>
@@ -62,7 +64,7 @@
         <members>StudentSubject__c-StudentSubject Layout</members>
         <members>Student__c-Registrar Layout</members>
         <members>Student__c-Teacher Layout</members>
-	<members>Subject__c-Subject Layout</members>
+		<members>Subject__c-Subject Layout</members>
         <members>Teacher__c-Teacher Layout</members>
         <name>Layout</name>
     </types>
@@ -70,6 +72,14 @@
         <members>Student__c.Registrar_Layout</members>
         <members>Student__c.Teacher_Layout</members>
         <name>RecordType</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
     </types>
     <version>53.0</version>
 </Package>
