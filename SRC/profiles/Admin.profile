@@ -2,6 +2,7 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>PracticeDataTypesAndMethods</apexClass>
+		<apexClass>ExpressionsAndOperators</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
