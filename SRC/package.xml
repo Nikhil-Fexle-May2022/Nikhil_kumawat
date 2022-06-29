@@ -12,6 +12,7 @@
         <members>PracticeDataTypesAndMethods</members>
         <members>StudentRecord</members>
         <members>TestClassNikhil</members>
+		<members>ExpressionsAndOperators</members>
         <name>ApexClass</name>
     </types>
 	<types>
