@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
-	<apexClass>ExpressionsAndOperators</apexClass>
+        <apexClass>ConditionalLoopsAndClasses</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Example</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OverridingInApex</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ExpressionsAndOperators</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
