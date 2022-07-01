@@ -16,6 +16,10 @@
 		<members>ConditionalLoopsAndClasses</members>
         <members>Example</members>
         <members>OverridingInApex</members>
+		<members>DiscountOnProduct</members>
+        <members>InstanceOfKeyword</members>
+        <members>SuperKeyword</members>
+        <members>ThisKeyword</members>
         <name>ApexClass</name>
     </types>
 	<types>
