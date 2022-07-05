@@ -62,9 +62,9 @@ public with sharing class CountryStateAndDistrict{
         countryName_3.put('Nepal', state_3);
 
         // Add country with country code on map
-        countryCodeNameStateAndDistrict.put('+91', countryName);
-        countryCodeNameStateAndDistrict.put('+34', countryName_2);
-        countryCodeNameStateAndDistrict.put('+977', countryName_3);
+        countryCodeNameStateAndDistrict.put('IN(+91)', countryName);
+        countryCodeNameStateAndDistrict.put('ES(+34)', countryName_2);
+        countryCodeNameStateAndDistrict.put('Np(+977)', countryName_3);
 
         // Find the code, country name, states and districts
         for(String code : countryCodeNameStateAndDistrict.keySet()) {
