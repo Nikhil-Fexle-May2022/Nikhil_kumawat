@@ -22,6 +22,7 @@
         <members>ThisKeyword</members>
 	<members>CountryStateAndDistrict</members>
         <members>InsertRecord</members>
+		 <members>CountryInformation</members>
         <name>ApexClass</name>
     </types>
 	<types>
@@ -65,7 +66,7 @@
         <name>CustomTab</name>
     </types>
 	<types>
-	<members>Account-Account Layout</members>
+		<members>Account-Account Layout</members>
         <members>College__c-College Layout</members>
         <members>Contact-Contact Layout</members>
         <members>Employee__c-Employee Layout</members>
