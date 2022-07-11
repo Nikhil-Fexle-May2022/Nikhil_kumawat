@@ -21,7 +21,7 @@ public with sharing class ExternalId {
         *                  
 
         **/ 
-    public void createAccountWithFieldAndOpportunity() {
+    public static void createAccountWithFieldAndOpportunity() {
         Opportunity newOpportunity = new Opportunity(
             Name='OpportunityWithAccountInsert',
             StageName='Prospecting',
@@ -39,5 +39,14 @@ public with sharing class ExternalId {
         
         // Create the opportunity.
         Database.SaveResult results = Database.insert(newOpportunity);
+        System.debug('Final Result is  ' +results);
     }
 }
+
+/*
+HOW TO RUN IN ANONYMOUS WINDOW :-> 
+    ExternalId.createAccountWithFieldAndOpportunity();
+
+OUTPUT -> 
+17:02:23:165 USER_DEBUG [42]|DEBUG|Final Result is  Database.SaveResult[getErrors=();getId=0065i000005eRwLAAU;isSuccess=true;]
+*/
