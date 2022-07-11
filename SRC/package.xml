@@ -22,7 +22,10 @@
         <members>ThisKeyword</members>
 		<members>CountryStateAndDistrict</members>
         <members>InsertRecord</members>
-		 <members>CountryInformation</members>
+		<members>CountryInformation</members>
+		<members>DmlWorking</members>
+        <members>ExternalId</members>
+        <members>ParentChildSample</members>
         <name>ApexClass</name>
     </types>
 	<types>
