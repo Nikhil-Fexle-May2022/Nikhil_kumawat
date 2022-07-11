@@ -21,7 +21,7 @@ public with sharing class ParentChildSample {
         *                  
 
         **/ 
-    public void InsertParentChild() {
+    public static void InsertParentChild() {
     Date dt = Date.today();
     dt = dt.addDays(7);
     Opportunity newOpportunity = new Opportunity(
@@ -62,3 +62,11 @@ public with sharing class ParentChildSample {
         }
     }
 }
+/*
+HOW TO RUN IN ANONYMOUS WINDOW :-> 
+    ExternalId.createAccountWithFieldAndOpportunity();
+
+OUTPUT -> 
+17:07:31:175 USER_DEBUG [53]|DEBUG|Successfully created ID: 0015i00000AgldoAAB
+17:07:31:175 USER_DEBUG [53]|DEBUG|Successfully created ID: 0065i000005eRxYAAU
+*/
