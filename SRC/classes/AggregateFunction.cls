@@ -17,28 +17,28 @@ public with sharing class AggregateFunction {
     **/
 
     // FIRST:-> This is for setting the total number of states and districts in country record(or object).
-    public static void setTotalNumberOfStatesAndDistrictOnCountries(){
+    public static void  setTotalNumberOfStatesAndDistrictOnCountries() {
         // Querying the information in the 'AggregateResults' instance list
-        List<AggregateResult> results = [SELECT Country__c country_Id, count(Id) Total_States, 
-                                        SUM(Total_Number_of_Districts__c) Total_Districts 
-                                        FROM State__c 
-                                        GROUP BY Country__c];       
+        List<AggregateResult> results  = [SELECT Country__c Country_Id,  
+                                          COUNT(Id) Total_States, Sum(Total_number_of_Districts__c) Total_Districts 
+                                          FROM State__c
+                                          GROUP BY Country__c];
         // Collecting all the records in Custom type object list
         List<Country__c> collectionOfStageReco = new List<Country__c>();
-        // then further iterating it 
-        for(AggregateResult ar : results){
+        // then further iterating it
+        for(AggregateResult ar : results) {
             // Integer typeCasting because it is in 'String' type
-            Integer totalNoOfStates = (Integer)ar.get('Total_No_Of_States');
+            Integer toatalStates = (Integer)ar.get('Total_States');
             // Now typecasting in the Id for a country Id
-            Id countryId=(Id)ar.get('Country_Id');
-            // Now further typeCasting in the Double datatype because of fear of hit the limit by putting
-            Double totalNoOfDistricts = (Double)ar.get('Total_No_Of_Districts');
-            Country__c countryObjectOne = new Country__c();
-            countryObjectOne.Total_Number_Of_States__c = totalNoOfStates;
-            countryObjectOne.Total_Number_Of_Districts__c = totalNoOfDistricts;
-            countryObjectOne.Id=countryId;
-            collectionOfStageReco.add(countryObjectOne); 
-        }    
+            Id CountryId = (Id)ar.get('Country_Id');
+            // Now further typeCasting in the Decimal datatype because of fear of hit the limit by putting
+            Decimal toatalDistrict = (Decimal)ar.get('Total_Districts');
+            Country__c countryObjectOne= new Country__c();
+            countryObjectOne.Total_number_of_States__c = toatalStates;
+            countryObjectOne.Total_number_of_Districts__c = toatalDistrict;
+            countryObjectOne.Id = CountryId;
+            collectionOfStageReco.add(countryObjectOne);     
+        }
         // If it done any kind of changes
         if(!collectionOfStageReco.isEmpty()){
             update collectionOfStageReco;
@@ -46,27 +46,27 @@ public with sharing class AggregateFunction {
     }
 
     // SECOND :-> This one is for setting total number of districts in state record(or object).
-    public static void setTotalNumberOfDistrictsOnStates(){
+    public static void  setTotalNumberOfDistrictsOnStates() {
         // Querying
-        List<AggregateResult> arr = [SELECT State__c State_Id,
-                                    COUNT(Id) Total_District 
-                                    FROM District__c 
-                                    GROUP BY State__c];
-
+        List<AggregateResult> arr  = [SELECT State__c State_Id, 
+                                      COUNT(Id) Total_Districts 
+                                      FROM District__c
+                                      GROUP BY State__c];
         // Listing up the result records and further iterate them.
-        List<State__c> collectionOfDistrictReco = new List<State__c>();
-        for(AggregateResult aar : arr){
-            // TypeCated in Integer
-            Integer totalNoOfDistrict=(Integer)aar.get('Total_No_Of_Districts');
-            // TypeCated in Id
-            Id stateId = (Id)aar.get('State_Id');
+        List<State__c> collectionOfDistrictReco  = new List<State__c>();
+        for(AggregateResult Agg : arr ) {
+            // TypeCasted in Integer
+            Integer toatalDistricts = (Integer)Agg.get('Total_Districts');
+            // TypeCasted in Id
+            Id CountryId = (Id)Agg.get('State_Id');
             State__c stateObjectTwo = new State__c();
-            stateObjectTwo.Total_Number_Of_Districts__c = totalNoOfDistrict;
+            stateObjectTwo.Total_number_of_Districts__c = toatalDistricts;
+            stateObjectTwo.Id = CountryId;
             // Adding all the results to the instance of the list
-            collectionOfDistrictReco.add(stateObjectTwo);
+            collectionOfDistrictReco .add(stateObjectTwo);
         }
-        if(!collectionOfDistrictReco.isEmpty()){
-            update collectionOfDistrictReco;
+        if(!collectionOfDistrictReco .isEmpty()){
+            update collectionOfDistrictReco ;
         }
     }
 }
