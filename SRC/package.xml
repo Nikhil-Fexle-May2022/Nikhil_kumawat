@@ -49,6 +49,7 @@
         <members>State__c.Identification__c</members>
         <members>State__c.State_Code__c</members>
         <members>State__c.Total_Number_of_Districts__c</members>
+		<members>Hello_World__c.Hello__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -69,6 +70,7 @@
 		<members>Country__c</members>
         <members>District__c</members>
         <members>State__c</members>
+		<members>Book__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -86,6 +88,7 @@
 		<members>Country__c</members>
         <members>District__c</members>
         <members>State__c</members>
+		<members>Book__c</members>
         <name>CustomTab</name>
     </types>
 	<types>
