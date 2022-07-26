@@ -29,14 +29,18 @@
 		<members>AggregateFunction</members>
         <members>CountryStateAndDistrictJSONGenerator</members>
         <members>MapOfCountryStateAndDistrictLevelTwo</members>
+        <members>AccountTriggerHelperClass</members>
         <name>ApexClass</name>
     </types>
 	<types>
         <members>HelloWorldTrigger</members>
+		<members>AccountTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
         <members>Dream_World__c.Tesla__c</members>
+		<members>Hello_World__c.Hello__c</members>
+		<members>Country__c.Country_Code__c</members>
 		<members>Hello_World__c.Hello__c</members>
 		<members>Hello_World__c.Hello__c</members>
 		<members>Country__c.Country_Code__c</members>
@@ -50,6 +54,8 @@
         <members>State__c.Identification__c</members>
         <members>State__c.State_Code__c</members>
         <members>State__c.Total_Number_of_Districts__c</members>
+		<members>Account.AccountType__c</members>
+        <members>Account.EmailToCustomer__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -66,6 +72,8 @@
 		<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
+		<members>Book__c</members>
+		<members>Country__c</members>
 		<members>Book__c</members>
 		<members>Book__c</members>
 		<members>Country__c</members>
@@ -84,6 +92,8 @@
 		<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
+		<members>Book__c</members>
+		<members>Country__c</members>
 		<members>Book__c</members>
 		<members>Book__c</members>
 		<members>Country__c</members>
