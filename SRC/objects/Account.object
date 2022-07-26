@@ -501,6 +501,39 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+	<fields>
+        <fullName>AccountType__c</fullName>
+        <externalId>false</externalId>
+        <label>AccountType</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saving Account</fullName>
+                    <default>false</default>
+                    <label>Saving Account</label>
+                </value>
+                <value>
+                    <fullName>Fixed-Deposit</fullName>
+                    <default>false</default>
+                    <label>Fixed-Deposit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EmailToCustomer__c</fullName>
+        <externalId>false</externalId>
+        <label>EmailToCustomer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
