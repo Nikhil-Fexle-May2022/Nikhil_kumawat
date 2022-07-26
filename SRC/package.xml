@@ -12,33 +12,35 @@
         <members>PracticeDataTypesAndMethods</members>
         <members>StudentRecord</members>
         <members>TestClassNikhil</members>
-		<members>ExpressionsAndOperators</members>
-		<members>ConditionalLoopsAndClasses</members>
+	<members>ExpressionsAndOperators</members>
+	<members>ConditionalLoopsAndClasses</members>
         <members>Example</members>
         <members>OverridingInApex</members>
-		<members>DiscountOnProduct</members>
+	<members>DiscountOnProduct</members>
         <members>InstanceOfKeyword</members>
         <members>SuperKeyword</members>
         <members>ThisKeyword</members>
-		<members>CountryStateAndDistrict</members>
+	<members>CountryStateAndDistrict</members>
         <members>InsertRecord</members>
-		<members>CountryInformation</members>
-		<members>DmlWorking</members>
+	<members>CountryInformation</members>
+	<members>DmlWorking</members>
         <members>ExternalId</members>
         <members>ParentChildSample</members>
-		<members>AggregateFunction</members>
+	<members>AggregateFunction</members>
         <members>CountryStateAndDistrictJSONGenerator</members>
         <members>MapOfCountryStateAndDistrictLevelTwo</members>
+        <members>AccountTriggerHelperClass</members>
         <name>ApexClass</name>
     </types>
 	<types>
         <members>HelloWorldTrigger</members>
+	<members>AccountTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
         <members>Dream_World__c.Tesla__c</members>
-		<members>Hello_World__c.Hello__c</members>
-		<members>Country__c.Country_Code__c</members>
+	<members>Hello_World__c.Hello__c</members>
+	<members>Country__c.Country_Code__c</members>
         <members>Country__c.Country_JSON_Data__c</members>
         <members>Country__c.Total_Number_of_Districts__c</members>
         <members>Country__c.Total_Number_of_States__c</members>
@@ -49,47 +51,49 @@
         <members>State__c.Identification__c</members>
         <members>State__c.State_Code__c</members>
         <members>State__c.Total_Number_of_Districts__c</members>
+	<members>Account.AccountType__c</members>
+        <members>Account.EmailToCustomer__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Dream_World__c</members>
-		<members>Hello_World__c</members>
-		<members>Account</members>
+	<members>Hello_World__c</members>
+	<members>Account</members>
         <members>College__c</members>
         <members>Contact</members>
         <members>Employee__c</members>
         <members>Lead</members>
         <members>Pan_Card__c</members>
         <members>StudentSubject__c</members>
-		<members>Student__c</members>
-		<members>Subject__c</members>
+	<members>Student__c</members>
+	<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
-		<members>Book__c</members>
-		<members>Country__c</members>
+	<members>Book__c</members>
+	<members>Country__c</members>
         <members>District__c</members>
         <members>State__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Dream_World__c</members>
-		<members>Hello_World__c</members>
-		<members>College__c</members>
+	<members>Hello_World__c</members>
+	<members>College__c</members>
         <members>Employee__c</members>
         <members>Pan_Card__c</members>
         <members>StudentSubject__c</members>
-		<members>Student__c</members>
-		<members>Subject__c</members>
+	<members>Student__c</members>
+	<members>Subject__c</members>
         <members>Teacher__c</members>
         <members>Year_of_Class__c</members>
-		<members>Book__c</members>
-		<members>Country__c</members>
+	<members>Book__c</members>
+	<members>Country__c</members>
         <members>District__c</members>
         <members>State__c</members>
         <name>CustomTab</name>
     </types>
 	<types>
-		<members>Account-Account Layout</members>
+	<members>Account-Account Layout</members>
         <members>College__c-College Layout</members>
         <members>Contact-Contact Layout</members>
         <members>Employee__c-Employee Layout</members>
@@ -98,9 +102,9 @@
         <members>StudentSubject__c-StudentSubject Layout</members>
         <members>Student__c-Registrar Layout</members>
         <members>Student__c-Teacher Layout</members>
-		<members>Subject__c-Subject Layout</members>
+	<members>Subject__c-Subject Layout</members>
         <members>Teacher__c-Teacher Layout</members>
-		<members>Country__c-Country Layout</members>
+	<members>Country__c-Country Layout</members>
         <members>District__c-District Layout</members>
         <members>State__c-State Layout</members>
         <name>Layout</name>
