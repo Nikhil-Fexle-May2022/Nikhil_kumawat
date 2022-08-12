@@ -30,11 +30,13 @@
         <members>CountryStateAndDistrictJSONGenerator</members>
         <members>MapOfCountryStateAndDistrictLevelTwo</members>
         <members>AccountTriggerHelperClass</members>
+        <members>OpportunityTriggerHelper</members>
         <name>ApexClass</name>
     </types>
 	<types>
         <members>HelloWorldTrigger</members>
 		<members>AccountTrigger</members>
+        <members>OpportunityTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -79,6 +81,10 @@
 		<members>Country__c</members>
         <members>District__c</members>
         <members>State__c</members>
+        <members>Automobile_Presence_Sensor__c</members>
+        <members>Automobile_Sensor__c</members>
+        <members>Automobile_TDU__c</members>
+        <members>Automobile_Tag__c</members>
         <name>CustomObject</name>
     </types>
     <types>
