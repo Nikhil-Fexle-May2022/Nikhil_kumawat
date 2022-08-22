@@ -31,12 +31,14 @@
         <members>MapOfCountryStateAndDistrictLevelTwo</members>
         <members>AccountTriggerHelperClass</members>
         <members>OpportunityTriggerHelper</members>
+        <members>TriggerAccountHelper</members>
         <name>ApexClass</name>
     </types>
 	<types>
         <members>HelloWorldTrigger</members>
 		<members>AccountTrigger</members>
         <members>OpportunityTrigger</members>
+		<members>Trigger_AccountOne</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -58,6 +60,7 @@
         <members>State__c.Total_Number_of_Districts__c</members>
 		<members>Account.AccountType__c</members>
         <members>Account.EmailToCustomer__c</members>
+		<members>Account.Discount__c</members>
         <name>CustomField</name>
     </types>
     <types>
