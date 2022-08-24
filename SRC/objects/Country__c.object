@@ -194,6 +194,28 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
+	 <fields>
+        <fullName>Total_Count_District_By_Trigger__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Count District By Trigger</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Count_State_By_Trigger__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Count State By Trigger</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <label>Country</label>
     <listViews>
         <fullName>All</fullName>
