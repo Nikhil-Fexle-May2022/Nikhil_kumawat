@@ -32,6 +32,10 @@
         <members>AccountTriggerHelperClass</members>
         <members>OpportunityTriggerHelper</members>
         <members>TriggerAccountHelper</members>
+		<members>AccountTriggerHelper</members>
+        <members>ContactTriggHelper</members>
+        <members>DistrictTriggerHelper</members>
+        <members>StateTriggerHelper</members>
         <name>ApexClass</name>
     </types>
 	<types>
@@ -39,6 +43,10 @@
 		<members>AccountTrigger</members>
         <members>OpportunityTrigger</members>
 		<members>Trigger_AccountOne</members>
+		<members>DistrictTrigger</members>
+        <members>StateTrigger</members>
+        <members>Trigger_Account</members>
+        <members>Trigger_Contact</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -61,6 +69,9 @@
 		<members>Account.AccountType__c</members>
         <members>Account.EmailToCustomer__c</members>
 		<members>Account.Discount__c</members>
+		<members>Country__c.Total_Count_District_By_Trigger__c</members>
+        <members>Country__c.Total_Count_State_By_Trigger__c</members>
+        <members>State__c.Total_Count_Districts_By_Trigger__c</members>
         <name>CustomField</name>
     </types>
     <types>
