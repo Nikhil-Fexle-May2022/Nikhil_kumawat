@@ -1,0 +1,15 @@
+<template>
+    <div><h2>Simple Calculator LWC</h2></div>
+    <div>
+        <lightning-input type="number" name="num1" label="First Number" onchange={handleNum1} placeholder="Enter Here"></lightning-input>
+        <lightning-input type="number" name="num2" label="Second Number" onchange={handleNum2} placeholder="Enter Here"></lightning-input>
+        <br>
+        <lightning-button variant="brand" label="Add" title="Primary action" onclick={callAdd} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Subtract" title="Primary action" onclick={callSub} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Multiply" title="Primary action" onclick={callMul} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Divide" title="Primary action" onclick={callDiv} class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <div>
+        <b>Result : {Result}</b>
+    </div>
+</template>
