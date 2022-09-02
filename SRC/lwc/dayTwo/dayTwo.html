@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Output" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-var-m-bottom_small">
+                <!-- <lightning-button variant="brand" label="Get Status" onclick={handleLoad} ></lightning-button> -->
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoadOne} ></lightning-button>
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoadTwo} ></lightning-button>
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoadThree} ></lightning-button>
+            </p>
+            <p class="slds-var-m-bottom_small">
+                <!-- <lightning-button variant="brand" label="Get Status" onclick={handleLoad} ></lightning-button> -->
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoadTwo} ></lightning-button>
+            </p>
+            <p class="slds-var-m-bottom_small">
+                <!-- <lightning-button variant="brand" label="Get Status" onclick={handleLoad} ></lightning-button> -->
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoadThree} ></lightning-button>
+            </p>
+            <template if:true={statusOne}>
+                <p>{statusOne}</p>
+            </template>
+            <template if:true={statusTwo}>
+                <p>{statusOne} {statusTwo}</p>
+            </template>
+            <template if:true={statusThree}>
+                <p>{statusOne} {statusTwo} {statusThree}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
