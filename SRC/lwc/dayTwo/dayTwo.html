@@ -1,3 +1,5 @@
+// First Approach
+
 <template>
     <lightning-card title="Output" icon-name="custom:custom63">
         <div class="slds-var-m-around_medium">
@@ -15,6 +17,23 @@
                 <!-- <lightning-button variant="brand" label="Get Status" onclick={handleLoad} ></lightning-button> -->
                 <!-- <lightning-button variant="brand" label="Get Status" onclick={handleLoadThree} ></lightning-button> -->
             <!-- </p> -->
+            <div>
+                <div>{statusOne}</div>
+                <div>{statusOne}{statusTwo}</div>
+                <div>{statusOne}{statusTwo}{statusThree}</div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
+
+// Second Approach
+
+<template>
+    <lightning-card title="Output" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-var-m-bottom_small">
+                <lightning-button variant="brand" label="Get Status" onclick={handleLoad} ></lightning-button>
+            </p>
             <div>
                 <div>{statusOne}</div>
                 <div>{statusOne}{statusTwo}</div>
