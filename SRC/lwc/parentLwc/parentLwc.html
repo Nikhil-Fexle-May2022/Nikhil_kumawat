@@ -1,0 +1,14 @@
+<template>
+    <lightning-card variant="Narrow" title="Child to Parent">
+        <c-child-lwc onprogressvaluechange={handleprogressvaluechange}></c-child-lwc>
+        <br>
+        <div class="container">
+            <lightning-layout vertical-align="center" class="slds-p-horizontal_xx-small">
+                <lightning-layout-item>{progressValue}</lightning-layout-item>
+                <lightning-layout-item flexibility="grow">
+                    <div class="bar" style={style}></div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
