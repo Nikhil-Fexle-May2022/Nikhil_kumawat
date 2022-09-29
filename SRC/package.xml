@@ -99,6 +99,8 @@
         <members>Automobile_Sensor__c</members>
         <members>Automobile_TDU__c</members>
         <members>Automobile_Tag__c</members>
+		<members>Class__c</members>
+        <members>School__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -158,7 +160,7 @@
         <name>Profile</name>
     </types>
 	<types>
-        <members>Country__c</members>
+        <members>*</members>
         <name>SharingRules</name>
     </types>
     <version>53.0</version>
