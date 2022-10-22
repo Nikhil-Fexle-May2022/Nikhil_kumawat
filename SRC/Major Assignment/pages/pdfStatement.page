@@ -1,0 +1,128 @@
+<apex:page renderAs="advanced_pdf" controller="Records_PDF_Controller" action="{!recordPdf}" docType="html-5.0" standardStylesheets="false"
+    showHeader="false" applyHtmlTag="false">
+
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .tableClass {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            /* .theHead {
+                background-color: #3cb2b5;
+                color: #fff;
+            } */
+
+            .theHead,
+            .col,
+            t2 {
+                border: 1px solid #bbb;
+                text-align: left;
+                padding: 8px;
+            }
+
+            h1 {
+                /* font-size: 120%; */
+                margin-left: 0px;
+                padding: 10px;
+                text-align: center;
+                color: #fff;
+            }
+
+            h2 {
+                /* font-size: 120%; */
+                margin-left: 0px;
+                padding: 5px;
+                text-align: center;
+                color: #fff;
+            }
+
+            .even {
+                background-color: #dddddd48;
+                border: 2px solid rgba(204, 204, 204, 0.726);
+            }
+
+
+            @page {
+                size: letter;
+                margin: 3%;
+                margin-top: 0.8cm;
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+
+            .page-break {
+                display: block;
+                page-break-after: always;
+            }
+
+            body {
+                font-family: Arial Unicode MS;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Bank Statement</h1>
+
+
+        <p>
+            <b>Name</b> : {!contact_Object.Title} {!contact_Object.Name}
+            <br/>
+            <b> Email</b> : {!contact_Object.Email}
+            <br/>
+            <b>Account Number </b>: {!contact_Object.Account_Number__c}
+        </p>
+
+        <p>
+            Your Account Statement from {!startDateString} to {!endDateString} is below :
+        </p>
+
+        <h2>Account Statement</h2>
+
+        <apex:dataTable value="{!transaction_Entry_List}" var="bk" id="theTable" headerClass="theHead" cellpadding="10px" rowClasses="odd,even"
+            styleClass="tableClass">
+
+            <apex:column styleClass="col">
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputText value="{!bk.Name}" />
+                <apex:facet name="footer"></apex:facet>
+            </apex:column>
+
+            <apex:column styleClass="col">
+                <apex:facet name="header">Amount</apex:facet>
+                <apex:outputText value="{!bk.Amount__c}" />
+                <apex:facet name="footer"></apex:facet>
+            </apex:column>
+
+            <apex:column styleClass="col">
+                <apex:facet name="header">Type</apex:facet>
+                <apex:outputText value="{!bk.Type__c}" />
+                <apex:facet name="footer"></apex:facet>
+            </apex:column>
+
+            <apex:column styleClass="col">
+                <apex:facet name="header">Date</apex:facet>
+                <apex:outputText value="{0,date,MM/dd/yyyy}">
+                    <apex:param value="{!bk.Transaction_Date__c}" />
+                </apex:outputText>
+
+                <apex:facet name="footer"></apex:facet>
+            </apex:column>
+
+            <apex:column styleClass="col">
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputText value="{!bk.Status__c}" />
+                <apex:facet name="footer"></apex:facet>
+            </apex:column>
+
+        </apex:dataTable> 
+
+    </body>
+</apex:page>

@@ -1,0 +1,144 @@
+<apex:page docType="html-5.0" Controller="VisualHelper">
+    <apex:form >
+        
+        <apex:pageBlock title="Options">
+            <apex:selectList size="1" value="{!renderBlock}" >
+                <apex:selectOptions value="{!selectOption}"/>
+                    <apex:actionSupport event="onchange" action="{!renderOptionsAction}" />
+                
+            </apex:selectList>
+
+        </apex:pageBlock>
+        
+      
+        <apex:pageBlock title="Amount Between" rendered="{!amountFlag}">
+            
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Starting Amount"/>  
+                    <apex:inputText value="{!startAmount}" label="Starting Amount" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Ending Amount"/>  
+                    <apex:inputText value="{!endAmount}" label="Ending Amount" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:commandButton value="Search" action="{!transactionWithAmountBetween}" />    
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!transactionListAmountBetween}" var="tranamb" rendered="{! IF(ISBLANK(transactionListAmountBetween), false, true)}" >
+                <apex:column value="{!tranamb.Id}" />
+                <apex:column value="{!tranamb.Contact__r.Name}" />
+                <apex:column value="{!tranamb.Name}" />
+                <apex:column value="{!tranamb.Type__c}" />
+                <apex:column value="{!tranamb.Amount__c}" />
+                <apex:column value="{!tranamb.Status__c}" />
+                <apex:column value="{!tranamb.Transaction_Date__c}" />            
+            </apex:pageBlockTable>
+          
+        
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Status" rendered="{!statusFlag}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Status" />
+                        <apex:selectList size="1" value="{!status}" >
+                            <apex:selectOptions value="{!StatusOption}" > </apex:selectOptions>        
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Search" action="{!transactionWithStatus}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!transactionListStatus}" var="transtatus" rendered="{! IF(ISBLANK(transactionListStatus), false, true)}" >
+                
+                <apex:column value="{!transtatus.Id}" />
+                <apex:column value="{!transtatus.Contact__r.Name}" />
+                <apex:column value="{!transtatus.Name}" />
+                <apex:column value="{!transtatus.Type__c}" />
+                <apex:column value="{!transtatus.Amount__c}" />
+                <apex:column value="{!transtatus.Status__c}" />
+                <apex:column value="{!transtatus.Transaction_Date__c}" />
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Type" rendered="{!typeFlag}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Type" />
+                        <apex:selectList size="1" value="{!type}" >
+                            <apex:selectOptions value="{!TypeOption}" > </apex:selectOptions>        
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Search" action="{!transactionWithType}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!transactionListType}" var="tranType" rendered="{! IF(ISBLANK(transactionListType), false, true)}" >
+                
+                <apex:column value="{!tranType.Id}" />
+                <apex:column value="{!tranType.Contact__r.Name}" />
+                <apex:column value="{!tranType.Name}" />
+                <apex:column value="{!tranType.Type__c}" />
+                <apex:column value="{!tranType.Amount__c}" />
+                <apex:column value="{!tranType.Status__c}" />
+                <apex:column value="{!tranType.Transaction_Date__c}" />
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Date Between" rendered="{!dateFlag}">
+            
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Starting Date"/>  
+                    <apex:inputText value="{!startDate}" label="Starting Date" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Ending Date"/>  
+                    <apex:inputText value="{!endDate}" label="Ending Date" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:commandButton value="Search" action="{!transactionWithDate}" />    
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!transactionListWithDate}" var="tranDate" rendered="{! IF(ISBLANK(transactionListWithDate), false, true)}" >
+                <apex:column value="{!tranDate.Id}" />
+                <apex:column value="{!tranDate.Contact__r.Name}" />
+                <apex:column value="{!tranDate.Name}" />
+                <apex:column value="{!tranDate.Type__c}" />
+                <apex:column value="{!tranDate.Amount__c}" />
+                <apex:column value="{!tranDate.Status__c}" />
+                <apex:column value="{!tranDate.Transaction_Date__c}" />            
+            </apex:pageBlockTable>
+          
+        
+        </apex:pageBlock>
+        
+        
+         <apex:pageBlock title="Status" rendered="{!accountNumberFlag}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Number" />
+                    <apex:inputText value="{!accountNumber}" label="Account Number" />
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Search" action="{!transactionWithAccountNumber}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!transactionListWithAccountNumber}" var="tranacc" rendered="{! IF(ISBLANK(transactionListWithAccountNumber), false, true)}" >
+                
+                <apex:column value="{!tranacc.Id}" />
+                <apex:column value="{!tranacc.Contact__r.Name}" />
+                <apex:column value="{!tranacc.Name}" />
+                <apex:column value="{!tranacc.Type__c}" />
+                <apex:column value="{!tranacc.Amount__c}" />
+                <apex:column value="{!tranacc.Status__c}" />
+                <apex:column value="{!tranacc.Transaction_Date__c}" />
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    </apex:form>
+            
+</apex:page>

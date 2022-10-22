@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <lightning-quick-action-panel header="Entries Records">
+
+            <lightning-combobox name="progress" label="Select Transaction Status" value={transLimit_Ref}
+                placeholder="Select Progress" options={options} onchange={handle_Option_Value}>
+            </lightning-combobox>
+
+            <!-- <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-01">Select Transaction Status</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" id="select-01">
+                        <option value="">Select…</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- DataTable -->
+
+            <div style="height: 304px; margin-top: 10px">
+                <template if:true={dataList}>
+                    <lightning-datatable key-field="id" data={dataList} columns={lstColumns} hide-checkbox-column>
+                    </lightning-datatable>
+                </template>
+            </div>
+
+            <!-- Quick Action Close Button -->
+            <div slot="footer">
+                <lightning-button variant="brand" label="OK" onclick={handleClick} class="slds-m-right_small">
+                </lightning-button>
+                <lightning-button variant="neutral" label="Cancel" onclick={closeAction}></lightning-button>
+            </div>
+
+            <!-- <div class="slds-m-top_large slds-grid slds-grid_align-center slds-align–absolute-center">
+                <lightning-button variant="brand" label="Cancel" type="cancel" onclick={handleCancel}></lightning-button>
+            </div> -->
+        </lightning-quick-action-panel>
+    </div>
+</template>
