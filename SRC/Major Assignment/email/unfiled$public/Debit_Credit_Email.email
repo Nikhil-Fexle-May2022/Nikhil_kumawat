@@ -1,0 +1,1 @@
+Your A/c {!Transaction_Entry__c.Contact__r.Account_Number__c} is debited by {!Transaction_Entry__c.Amount__c} on {!Transaction_Entry__c.Transaction_Date__c}.Available Balance is {!Transaction_Entry__c.Contact__r.Available_Balance__c}.

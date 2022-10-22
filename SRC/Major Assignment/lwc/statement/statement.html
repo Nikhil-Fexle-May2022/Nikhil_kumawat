@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <lightning-card title="Statement Detail" icon-name="standard:account">
+            <div class="slds-var-m-around_small  slds-size_1-of-3">
+                <lightning-input type="date" name="startDate" label="From Date" placeholder="Enter Start Date...."
+                    onchange={handleStartChange} >
+                </lightning-input>
+
+                <lightning-input type="date" name="endDate" label="To Date" placeholder="Enter End Date...."
+                    onchange={handleEndChange}  >
+                </lightning-input>
+            </div>
+
+            <div class="slds-var-m-left_medium slds-var-m-top_large ">
+                <lightning-button variant=" brand" label="Show Statement" onclick={handleShowStatement}>
+                    
+                </lightning-button>
+
+                <lightning-button variant=" brand" label="PDF" onclick={handlePdf} class="slds-var-m-left_small">
+                    
+                </lightning-button>
+
+                <lightning-button variant=" brand" label="CSV" onclick={handleCSV} 
+                    class="slds-var-m-left_small">
+                </lightning-button>
+
+                <lightning-button variant=" brand" label="Email Statement" onclick={handleEmail} 
+                    class="slds-var-m-left_small">
+                </lightning-button>
+
+                <lightning-button variant=" brand" label="Cancel" onclick={handleCancel} class="slds-var-m-left_small">
+                </lightning-button>
+            </div>
+
+            <template if:true={data}>
+                <lightning-datatable columns={columns} data ={data} hide-checkbox-column="true" key-field="id">
+                </lightning-datatable>
+            </template>
+        </lightning-card>
+    </div>
+</template>

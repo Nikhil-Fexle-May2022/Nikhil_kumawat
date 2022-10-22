@@ -1,0 +1,58 @@
+<apex:page controller="VisualforcePageHelper" docType="html-5.0">
+    <apex:slds />
+    <!-- Begin Default Content REMOVE THIS -->
+    <h1>Search Transactions</h1>
+    <apex:form id="form">
+
+        <apex:pageBlock title="Enter Values in the following field">
+
+            <apex:pageBlockSection >
+                <apex:outputLabel value="Amount Between"></apex:outputLabel>
+                <br/>
+                <apex:input type="number" value="{! amountFrom }" label="Amount From"></apex:input>
+                <apex:input type="number" value="{! amountUpto }" label="Amount Upto"></apex:input>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection >
+                <apex:outputLabel value="Date Between"></apex:outputLabel>
+                <br/>
+                <apex:input type="date" value="{! dateFrom }" label="Date From"></apex:input>
+                <apex:input type="date" value="{! dateUpto }" label="Date Upto"></apex:input>
+            </apex:pageBlockSection>
+
+            <br/>
+            <apex:panelGrid columns="">
+            </apex:panelGrid>
+
+            <apex:pageBlockSection columns="">
+                <apex:panelGrid columns="2">
+                    <apex:outputLabel value="Entry Name"></apex:outputLabel>
+                    <apex:input type="text" value="{! entryName }"></apex:input>
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection >
+                <apex:panelGrid columns="1">
+                    <apex:outputLabel value="Status"></apex:outputLabel>
+                    <apex:selectList value="{!selectedStatus}" size="1">
+                        <apex:selectOption itemValue="Pending" itemLabel="Pending"/>
+                        <apex:selectOption itemValue="Completed" itemLabel="Completed"/>
+                        <apex:selectOption itemValue="Cancelled" itemLabel="Cancelled"/>
+                    </apex:selectList>
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+           
+            <apex:commandButton action="{! searchTransaction}" value="Submit"/>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Result of the Above Form">
+            <apex:pageBlockTable value="{! transactionData }" var="fetch">
+                <apex:column value="{!fetch.Name}"/>
+                <apex:column value="{!fetch.Status__c}"/>
+                <apex:column value="{!fetch.Transaction_Date__c}"/>
+                <apex:column value="{!fetch.Amount__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    <!-- End Default Content REMOVE THIS -->
+</apex:page>
