@@ -47,7 +47,7 @@ public with sharing class SobjectControllerTest {
         controllerInstThree.conditionfield = '[LastName]';
         
         SobjectController controllerInstFour = new SobjectController();
-        controllerInstFour.test = '';
+        controllerInstFour.test = 'None';
         controllerInstFour.displayfield = '[]';
         controllerInstFour.conditionfield = '[]';
         
