@@ -2,19 +2,23 @@
 public class AccountApplicationControllerTest {
 	
     @isTest static void testMethodForWrapper(){
-		AccountApplicationController controllerInstance = new  AccountApplicationController();
         
-        AccountApplicationController.AccountWrapper accountWrap = new AccountApplicationController.AccountWrapper();
-        accountWrap.acc = new Account(Name='Test', Account_Status__c='In Progress');
-        controllerInstance.accWrapper = accountWrap;
-        //System.debug(accountWrap.acc);
-        
+        List<Account> accountRecord = TestFactory.createAccountList(2, false);
+        for(Account acc : accountRecord){
+        	acc.Account_Status__c = 'Not Started';    
+        }
+              
         Test.StartTest();
+            AccountApplicationController controllerInstance = new  AccountApplicationController();
+            AccountApplicationController.AccountWrapper accountWrap = new AccountApplicationController.AccountWrapper();
+            accountWrap.acc = accountRecord[0];
+            
+            controllerInstance.accWrapper = accountWrap;
+            
             controllerInstance.onSave();
             controllerInstance.onBack();
             controllerInstance.onContinue();
-        Test.StopTest();
-        System.Assert(accountWrap != null);
-    }
-    
+            System.Assert(accountWrap != null);
+        Test.StopTest();        
+    }   
 }
