@@ -27,32 +27,24 @@ private class LightningDesignSystemControllerTest {
     @isTest
     static void testCancel(){
         Test.StartTest();
-        	LightningDesignSystemController ldsController = new LightningDesignSystemController();
-        	PageReference referenceOfPage = ldsController.cancel();
-        	System.assertNotEquals(null, referenceOfPage, 'Page Reference is null');
+            LightningDesignSystemController ldsController = new LightningDesignSystemController();
+            PageReference referenceOfPage = ldsController.cancel();
+            System.assertNotEquals(null, referenceOfPage, 'Page Reference is null');
         Test.StopTest();
     }
     
     @isTest
     static void testSave(){
         Test.StartTest();
-        	/*List<Contact> con = [SELECT Id, LastName FROM Contact WHERE LastName = 'Test'];
-            ApexPages.currentPage().getParameters().put('name', 'Test Training');
-            ApexPages.currentPage().getParameters().put('hidden', con[0].Id);
-            ApexPages.currentPage().getParameters().put('mail', 'test@example.com');
-            ApexPages.currentPage().getParameters().put('opt', 'Option 1');
-            ApexPages.currentPage().getParameters().put('interest', 'Option A;Option B');
-            ApexPages.currentPage().getParameters().put('Birthday', '2023-01-01');
-            ApexPages.currentPage().getParameters().put('avatar', 'test.png');
-            ApexPages.currentPage().getParameters().put('filename1', 'Test File'); */
-        	LightningDesignSystemController ldsController = new LightningDesignSystemController();
-        	List<Contact> con = [SELECT Id, LastName FROM Contact WHERE LastName = 'Test'];
-        	ApexPages.currentPage().getParameters().put('name', 'Test Training');
-        	ApexPages.currentPage().getParameters().put('hidden', con[0].Id);
-            ApexPages.currentPage().getParameters().put('mail', '');
+	    LightningDesignSystemController ldsController = new LightningDesignSystemController();
+	    List<Contact> con = [SELECT Id, LastName FROM Contact WHERE LastName = 'Test'];
+	    ApexPages.currentPage().getParameters().put('name', 'Test Training');
+	    ApexPages.currentPage().getParameters().put('hidden', con[0].Id);
+	    ApexPages.currentPage().getParameters().put('mail', '');
             ApexPages.currentPage().getParameters().put('interest', '');
-        	ApexPages.currentPage().getParameters().put('Birthday', '2023-01-01');
-        	ApexPages.currentPage().getParameters().put('avatar', 'Test.png');
+	    ApexPages.currentPage().getParameters().put('Birthday', '2023-01-01');
+	    ApexPages.currentPage().getParameters().put('avatar', 'Test.png');
+		
             PageReference referenceOfPage = ldsController.save();
             List<Training__c> trRecords = [SELECT Id, Name FROM Training__c WHERE Id =: referenceOfPage.getParameters().get('Id')];
             System.Assert(trRecords.size() != null);
