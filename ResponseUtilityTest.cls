@@ -32,15 +32,22 @@ public with sharing class ResponseUtilityTest {
         Boolean checkCondition;
         Object objBody;
 
-        Account accRecord = new Account();
-        accRecord.Name = 'Testing Account';
-        accRecord.Account_Status__c = 'In Progress';
-        insert accRecord;
+        List<Account> accList = TestFactory.createAccountList(1, false);
+        for(Account acc : accList){
+            acc.Name = 'Test Account Data';
+            acc.Account_Status__c = 'Not Started';
+        }
+        
+        if(!accList.isEmpty()){
+            insert accList;
+        }
 
         Test.StartTest();
             ResponseUtility rs = new ResponseUtility();
-            rs.setBody(accRecord);
+            rs.setBody(accList);
+        	System.Assert(rs != null);
+            System.assertEquals('success', rs.status, 'Status not set correctly');
+        	System.assertEquals(true, rs.isSuccess, 'isSuccess not set correctly');
         Test.StopTest();
-
     }
 }
