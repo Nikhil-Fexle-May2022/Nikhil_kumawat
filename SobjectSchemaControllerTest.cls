@@ -1,12 +1,5 @@
 @isTest(seeAllData = false)
 private class SobjectSchemaControllerTest {
-    @TestSetup static void testDataSetup(){
-        Account acc = new Account();
-        acc.Name = 'Test Account Data';
-        acc.Account_Status__c = 'Not Started';
-        insert acc; 
-        
-    }
     
     @isTest static void testGetallObjects(){
         Test.StartTest();
@@ -20,6 +13,7 @@ private class SobjectSchemaControllerTest {
                 }
             }
             System.assertEquals(found, true);
+        	System.Assert(listOfOption != Null);
         Test.StopTest();
     }
     
@@ -31,7 +25,10 @@ private class SobjectSchemaControllerTest {
             SobjectSchemaController controlClassOne = new SobjectSchemaController();
             controlClassOne.val = 'Account';
             controlClassOne.getPermissions();
+        
             System.assert(controlClassOne != null);
+        	System.assertEquals(false, controlClassOne.flagsave, 'Error ! Conditions are not satisfied');
+        	System.assertEquals(false, controlClassOne.dispalyfield, 'Error ! Conditions are not fulfilled');
         Test.StopTest();
     }
     
@@ -40,13 +37,35 @@ private class SobjectSchemaControllerTest {
         	SobjectSchemaController controlClass = new SobjectSchemaController();
         	controlClass.val = 'Account';
         	controlClass.newRecord();
+        
+        	System.Assert(controlClass.selectedobject != Null);
+        	System.assertEquals(true, controlClass.flagsave, 'Error Not be specified');
+        	System.assertEquals(false, controlClass.dispalyfield, 'Error Could not be specified');
         Test.StopTest();
     }
     
     @isTest static void testSave(){
         Test.StartTest();
-            SobjectSchemaController controlClass = new SobjectSchemaController();
-            controlClass.save();
+            SobjectSchemaController controller = new SobjectSchemaController();
+        	controller.val = 'Account';
+        
+            List<Account> accountRecordList = TestFactory.createAccountList(2, false);
+            for(Account acc : accountRecordList){
+                acc.Account_Status__c = 'Not Started';
+            }
+        	
+        	MockDAO.AccountMockDAO accountMockDAOInstance = new MockDAO.AccountMockDAO();
+            accountMockDAOInstance.accounts = accountRecordList;
+        
+        	AccountDAO.IAccountDAO accountDAOInstance = new AccountDAO();
+        	accountDAOInstance = accountMockDAOInstance;
+        	List<Account> accList = accountDAOInstance.generateAccount();
+        	controller.selectedobject = accList[0];
+        	controller.objectlist = new Map<String, Schema.SObjectType>();
+            controller.save();
+        
+        	System.assertEquals(false, controller.flagsave, 'Matched not specified');
+        	System.Assert(controller.selectedobject != Null);
         Test.StopTest();
     }
     
@@ -54,7 +73,11 @@ private class SobjectSchemaControllerTest {
         Test.StartTest();
         	SobjectSchemaController controlClass = new SobjectSchemaController();
         	controlClass.val = 'Account';
-			controlClass.getfieldvalues();        	
+			controlClass.getfieldvalues();  
+        	
+        	System.assert(controlClass.FieldvalueList != Null);
+        	System.assertEquals(true, controlClass.dispalyfield, 'Fields are not specified');
+        	System.assertEquals(false, controlClass.flagsave, 'Conditions not match');
         Test.StopTest();
     }
 }
