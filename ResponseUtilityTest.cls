@@ -34,17 +34,19 @@ public with sharing class ResponseUtilityTest {
 
         List<Account> accList = TestFactory.createAccountList(1, false);
         for(Account acc : accList){
-            acc.Name = 'Test Account Data';
+            acc.Id = TestFactory.getFakeId(Account.SObjectType);
             acc.Account_Status__c = 'Not Started';
         }
         
-        if(!accList.isEmpty()){
-            insert accList;
-        }
+        MockDAO.AccountMockDAO accountMockDAOInstance = new MockDAO.AccountMockDAO();
+        accountMockDAOInstance.accounts = accList;
 
         Test.StartTest();
+            AccountDAO.IAccountDAO accountDaoInstance = new AccountDAO();
+            accountDaoInstance = accountMockDAOInstance;
+            List<Account> accountList = accountDaoInstance.generateAccount();
             ResponseUtility rs = new ResponseUtility();
-            rs.setBody(accList);
+            rs.setBody(accountList);
         	System.Assert(rs != null);
             System.assertEquals('success', rs.status, 'Status not set correctly');
         	System.assertEquals(true, rs.isSuccess, 'isSuccess not set correctly');
