@@ -11,7 +11,7 @@ public with sharing class StringContainsTest {
         
        System.assertEquals('true', finalResultsTwo);
     }
-   /* 
+    
     @isTest
     static void testDataTwo(){
         String nameTest = 'Test';
@@ -22,5 +22,5 @@ public with sharing class StringContainsTest {
         Test.stopTest();
     
         System.assertEquals('false', finalResults);
-    } */
+    } 
 }
